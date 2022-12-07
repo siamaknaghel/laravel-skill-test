@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Product_mysqlController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,8 @@ Route::get('/', function () {
     return view('products');
     });
 Route::apiResource('products', ProductController::class);
+
+Route::get('/products-mysql', function () {
+    return view('productsmysql');
+    });
+Route::apiResource('productsmysql', Product_mysqlController::class);
